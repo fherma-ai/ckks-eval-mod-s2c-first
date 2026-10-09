@@ -119,7 +119,7 @@ pub fn mod_up(state: &Context, coeffs: &Ct) -> Ct {
     let mut arena = state.scratch.borrow_mut();
     let mut scratch = arena.borrow();
     state.module.ckks_copy(&mut src, coeffs, &mut scratch).expect("copy the coefficients");
-    <BE as CKKSEncapsulatedModUpImpl<BE>>::ckks_encapsulated_mod_up(
+    <BE as CKKSEncapsulatedModUpImpl>::ckks_encapsulated_mod_up(
         &state.module,
         &mut raised,
         &mut src,
